@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Bar</title>
+
+<style type="text/css">
+header {
+    background-color: #fff;
+    padding: 15px 40px;
+    height: 48px;
+    position: fixed;
+    top:0;
+    left: 10%;
+    width: 80%;
+    box-sizing: border-box;
+    transition: top 0.4s ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.hideUp header {
+    top: -48px;
+}
+
+/*
+選單線
+*/
+.line {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    cursor: pointer;
+    display: block;
+    padding: 16px;
+    position: fixed;
+    z-index: 2;
+}
+.line .menu,
+.line .menu::before,
+.line .menu::after {
+    background: #222;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    transition: background ease 0.15s, top ease 0.15s 0.15s, transform ease 0.15s;
+    width: 20px;
+}
+.line .menu {
+    left: 18px;
+    top: 27px;
+}
+
+.line .menu::before {
+    top: -6px;
+}
+
+.line .menu::after {
+    top: 6px;
+}
+/*
+點選選單變叉叉
+*/
+#menu:checked + .line .menu {
+    background: transparent;
+}
+
+#menu:checked + .line .menu::before {
+    transform: rotate(45deg);
+}
+
+#menu:checked + .line .menu::after {
+    transform: rotate(-45deg);
+}
+
+#menu:checked + .line .menu::before,
+#menu:checked + .line .menu::after {
+    top: 0;
+    transition: top ease 0.15s, transform ease 0.15s 0.15s;
+}
+
+/*
+選單開合
+*/
+#menu:checked ~ .menu-list {
+    width: 200px;
+    overflow: auto;
+}
+
+.menu-list {
+    width: 60px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 50px;
+    position: fixed;
+    z-index: 1;
+    transition: all 0.3s;
+    overflow: hidden;
+    
+}
+/*
+選單向外推
+*/
+.menu-list ul {
+    list-style: none;
+    margin-left: 70px;
+    margin-bottom: 200px;
+    padding: 0;
+}
+.menu-list ul > li {
+    display: block;
+    width: 100px;
+    margin: 5px;
+
+}
+/*
+隱藏核許框
+*/
+input#menu {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <header>Report</header>
+    <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+            <div class="menu"></div>
+        </label>
+        
+        <div class="menu-list">
+            <ul>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+                <li>選單</li>
+            </ul>
+        </div>
+        </nav>
+<script type="text/javascript">
+    var bodyClass = document.body.classList,
+        lastScrollY = 0;
+    window.addEventListener('scroll', function(){
+        var st = this.scrollY;
+
+        /* 判斷是向上捲動，而且捲軸超過 200px */
+        if( st < lastScrollY) {
+            bodyClass.remove('hideUp');
+        } else {
+            bodyClass.add('hideUp');
+        }
+
+        lastScrollY = st;
+    });
+</script>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</body>
+</html>
+
